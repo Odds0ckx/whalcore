@@ -1,17 +1,18 @@
 # Whal3Core website redesign, handoff
 
-**Version:** v4 (current). v2 first build, v3 on-brand palette, v4 motion + layout.
+**Version:** v4 (current, edited in place). v2 first build, v3 on-brand palette.
 **Date:** 2026-08-06
 **Branch:** `claude/whale-core-redesign-1mt3as`
 
 ## Current state
 
-**v4 is the version to look at.** Each version changes one thing so they diff cleanly:
+**v4 is the working copy and is edited in place.** Versioned folders are no longer
+used for this project. Earlier versions are kept only for reference:
 
 - **v2** first build. Accent palette carried over from the reference CodePens.
 - **v3** palette rebuilt on brand (blues, chrome, black), nothing else touched.
 - **v4** motion system, stats layout, and the cursor-tracked spotlight on the
-  use-case cards.
+  use-case cards. Current.
 
 The existing live site at the repo root (`index.html` + `assets/`) is untouched, per
 the standing rule that existing files are never overwritten. All versions sit side by
@@ -38,6 +39,22 @@ v4/assets/*.png|svg brand logos copied from the current site
 decelerating curve rather than the short back-out the first build used, which is what
 made hover and reveal feel abrupt. Elastic entrances were replaced with a scale-from-
 0.9 expo settle; elastic reads as springy at this scale.
+
+The first pass at this was technically correct but too understated to notice, so the
+amounts were raised: reveals travel 56px (84px in staggered rows) with a slight scale,
+over 1.25s to 1.35s, and fire at 80 to 86 percent of viewport height rather than 90,
+so the travel is watched instead of finishing off screen. Row stagger went to 0.14s so
+the cascade is legible.
+
+Several of the largest surfaces (integration steps, positioning columns, plans, the
+founding banner, cost cards, verdict tiles, the AI-read panel) had no hover response
+at all, which was most of why the page felt inert under the cursor. They now share one
+lift. `.chip` had a transition declared but no hover rule to drive it.
+
+Note that while a reveal tween is still running its element carries an inline
+transform, which suppresses the CSS hover until `clearProps` releases it at the end of
+the tween. This is brief and self-correcting, but it is why a card hovered the instant
+it appears will not lift.
 
 **Spotlight.** The use-case cards carry a cursor-tracked spotlight, from the supplied
 reference. Two radial gradients centred on `--mouse-x/--mouse-y`: one behind a face
