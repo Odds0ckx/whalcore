@@ -51,6 +51,22 @@ founding banner, cost cards, verdict tiles, the AI-read panel) had no hover resp
 at all, which was most of why the page felt inert under the cursor. They now share one
 lift. `.chip` had a transition declared but no hover rule to drive it.
 
+Hover then still felt like snapping, for three reasons, all now fixed:
+
+1. Hover ran on the reveal curve. `--e-out` is expo-like: 83% of the travel is done at
+   a quarter of the duration. Over 80px entering the viewport that is smooth; over an
+   8px lift it is an instant jump followed by an invisible crawl. `--e-hover` was
+   solved against a target response instead of picked by eye, and lands 25 / 60 / 88
+   percent of the travel at a quarter, half and three quarters of the duration.
+2. Some hovers used `--e-spring`, which overshoots. Overshoot on a hover reads as a
+   bounce, not softness. No hover overshoots now.
+3. Every card hover also ran `scale()`, which forces the browser to re-rasterise the
+   card's text for the length of the transition. Hover is pure translation now, which
+   stays on the compositor.
+
+Enter and leave are also asymmetric (`--t-in` 0.5s, `--t-out` 0.7s) so pulling the
+cursor away reads as release rather than recoil.
+
 Note that while a reveal tween is still running its element carries an inline
 transform, which suppresses the CSS hover until `clearProps` releases it at the end of
 the tween. This is brief and self-correcting, but it is why a card hovered the instant
