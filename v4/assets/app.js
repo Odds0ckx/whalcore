@@ -277,15 +277,19 @@
      stranded at their start transform. A plain `to` cannot be reverted. */
   function rise(targets, opts) {
     opts = opts || {};
-    gsap.set(targets, { y: opts.y || 34, opacity: 0 });
+    gsap.set(targets, { y: opts.y || 56, scale: opts.scale || 0.985, opacity: 0 });
     gsap.to(targets, {
       y: 0,
+      scale: 1,
       opacity: 1,
-      duration: opts.duration || 1.05,
+      duration: opts.duration || 1.25,
       stagger: opts.stagger || 0,
       ease: "expo.out",
       clearProps: "transform",
-      scrollTrigger: { trigger: opts.trigger || targets, start: opts.start || "top 90%", once: true }
+      /* Fires once the element is properly on screen rather than at the very
+         bottom edge, so the travel is actually watched instead of finishing
+         off-screen. */
+      scrollTrigger: { trigger: opts.trigger || targets, start: opts.start || "top 86%", once: true }
     });
   }
 
@@ -301,7 +305,7 @@
   /* stagger cards that sit in a row rather than firing each on its own */
   [".cases", ".stance", ".steps", ".plans", ".group-grid", ".coverage"].forEach(function (sel) {
     document.querySelectorAll(sel).forEach(function (row) {
-      rise(row.children, { y: 56, duration: 1.15, stagger: 0.11, trigger: row, start: "top 84%" });
+      rise(row.children, { y: 84, scale: 0.97, duration: 1.35, stagger: 0.14, trigger: row, start: "top 80%" });
     });
   });
 
