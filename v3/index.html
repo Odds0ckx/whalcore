@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whal3Core · Know who just deposited</title>
+<meta name="description" content="The first wallet-intelligence layer built for crypto casinos. The instant a player deposits, Whal3Core reads their on-chain wallet and returns their value, their risk, and every casino they play.">
+<meta property="og:title" content="Whal3Core · Know who just deposited">
+<meta property="og:description" content="Crypto-native wallet intelligence for iGaming operators. Value, risk and cross-casino footprint, returned the instant a player deposits.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%230b0d12'/><path d='M3 14c2.4 0 2.4-2 4.8-2s2.4 2 4.8 2 2.4-2 4.8-2 2.4 2 4.6 2' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round'/></svg>">
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<div class="ambient ambient-1" aria-hidden="true"></div>
+<div class="ambient ambient-2" aria-hidden="true"></div>
+
+<!-- ══════════════════ ANNOUNCEMENT ══════════════════ -->
+<div class="announce">
+  <div class="wrap">
+    <span><b>Launching August 2026</b></span>
+    <span class="sep">·</span>
+    <span>The founding ten is now forming</span>
+    <span class="sep">·</span>
+    <a href="#access">Request access
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<div class="header-shell">
+  <header class="header anim-fade">
+    <a class="brand" href="#top" aria-label="Whal3Core home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 14c2.4 0 2.4-2 4.8-2s2.4 2 4.8 2 2.4-2 4.8-2 2.4 2 4.6 2"/>
+          <path d="M12 3.5v5.5"/>
+          <circle cx="12" cy="18.5" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="a">Whal3Core</span>
+        <span class="b">Wallet intelligence</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#platform">Platform</a>
+      <a href="#cross-casino">Cross-casino</a>
+      <a href="#integration">Integration</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <a class="header-cta" href="#access">
+      <span class="label">Request access</span>
+      <span class="dot" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 L17 7"/><path d="M8 7 H17 V16"/></svg>
+      </span>
+    </a>
+  </header>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<main id="top">
+<section class="hero">
+  <div class="bg-word" aria-hidden="true">ON&nbsp;DEPOSIT</div>
+  <div class="wrap hero-grid">
+
+    <div class="hero-copy">
+      <span class="eyebrow anim-fade">Crypto-native · an industry first</span>
+
+      <h1 class="display h1 hero-title">
+        <span class="line"><span>Know who just</span></span>
+        <span class="line"><span><em>deposited.</em></span></span>
+      </h1>
+
+      <p class="lede hero-lede anim-fade">The first wallet-intelligence layer built for crypto casinos. The instant a player deposits, Whal3Core reads their on-chain wallet and returns their value, their risk, and every casino they play.</p>
+
+      <div class="hero-actions anim-fade">
+        <a class="btn btn-dark" href="#access">Request access
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="btn btn-ghost" href="#how">See how it works
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+        </a>
+      </div>
+
+      <span class="hero-note anim-fade"><i class="pulse"></i>Launching August 2026 · founding cohort now forming</span>
+    </div>
+
+    <!-- constellation: the wallet graph -->
+    <div class="hero-visual">
+      <div class="constellation" id="constellation" role="img" aria-label="Diagram: a deposit lands on a wallet, which is read across four casinos and returns a VIP score of 82 and a moderate risk level.">
+        <svg class="links" viewBox="0 0 580 640" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <path d="M 284 64 C 260 90, 200 105, 152 122"/>
+          <path d="M 296 64 C 320 90, 380 105, 428 122"/>
+          <path d="M 140 214 C 150 244, 210 276, 262 292"/>
+          <path d="M 440 214 C 430 244, 370 276, 318 292"/>
+          <path d="M 156 305 C 176 305, 188 312, 199 314"/>
+          <path class="dashed" d="M 424 305 C 404 305, 392 312, 381 314"/>
+          <path d="M 262 388 C 245 415, 220 442, 200 462"/>
+          <path d="M 318 388 C 335 415, 360 442, 380 462"/>
+          <path d="M 96 442 C 122 448, 148 456, 160 462"/>
+          <path d="M 484 442 C 458 448, 440 456, 428 462"/>
+          <path d="M 200 526 C 215 560, 250 590, 290 606"/>
+          <path d="M 380 526 C 365 560, 330 590, 290 606"/>
+        </svg>
+
+        <div class="constellation-inner" id="constellationInner">
+
+          <div class="node node-pill n-deposit">
+            <div class="node-face clay clay-dark" title="Deposit event">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/></svg>
+            </div>
+          </div>
+
+          <div class="node node-sm n-you">
+            <div class="node-face clay clay-dark">
+              <span class="node-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9M10 20V4M16 20v-7M22 20H2"/></svg>
+              </span>
+              <span>
+                <span class="node-k">You hold</span>
+                <span class="node-v">29<small>%</small></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="node node-sm n-stake">
+            <div class="node-face clay clay-steel">
+              <span class="node-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 0 0 0 18a14 14 0 0 0 0-18"/><path d="M3 12h18"/></svg>
+              </span>
+              <span>
+                <span class="node-k">Stake</span>
+                <span class="node-v">38<small>%</small></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="node node-sm n-gamdom">
+            <div class="node-face clay clay-chrome">
+              <span class="node-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="3"/><circle cx="8.5" cy="12" r="1.4" fill="currentColor"/><circle cx="15.5" cy="12" r="1.4" fill="currentColor"/></svg>
+              </span>
+              <span>
+                <span class="node-k">Gamdom</span>
+                <span class="node-v">18<small>%</small></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="node node-core n-core">
+            <div class="node-face clay clay-dark">
+              <span>
+                <span class="node-k" style="color:rgba(255,255,255,.55)">Wallet dossier</span>
+                <span class="addr">0x7a3F…b29C</span>
+              </span>
+              <span class="split">
+                <div><span class="k">VIP prob.</span><span class="v azure">82</span></div>
+                <div><span class="k">Risk</span><span class="v chrome">Mod.</span></div>
+              </span>
+            </div>
+          </div>
+
+          <div class="node node-sm n-unknown node-ghost">
+            <div class="node-face">
+              <span class="node-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.5v.4"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+              </span>
+              <span>
+                <span class="node-k">Unlabelled</span>
+                <span class="node-v">15<small>%</small></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="node node-pill n-eth">
+            <div class="node-face clay clay-dark">ETH</div>
+          </div>
+
+          <div class="node node-sm n-vip">
+            <div class="node-face clay clay-azure">
+              <span class="node-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 4-7 5 5"/><path d="M3 21h18"/></svg>
+              </span>
+              <span>
+                <span class="node-k">VIP prob.</span>
+                <span class="node-v">82<small>/100</small></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="node node-sm n-risk">
+            <div class="node-face clay clay-slate">
+              <span class="node-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
+              </span>
+              <span>
+                <span class="node-k">Risk level</span>
+                <span class="node-v">Moderate</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="node node-pill n-btc">
+            <div class="node-face clay clay-dark">BTC</div>
+          </div>
+
+          <div class="node node-sm n-dossier">
+            <div class="node-face clay clay-steel">
+              <span class="node-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+              </span>
+              <span>
+                <span class="node-k">Output</span>
+                <span class="node-v" style="font-size:20px">Dossier</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <span class="spark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L13.5 10.5 L22 12 L13.5 13.5 L12 22 L10.5 13.5 L2 12 L10.5 10.5 Z"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CHAIN STRIP ══════════════════ -->
+<section class="chains">
+  <div class="wrap chains-inner anim-fade">
+    <p class="chains-label">Crypto-native. Reads every deposit on-chain across</p>
+    <div class="chains-list">
+      <span class="chip chip-steel chip-dot">Ethereum</span>
+      <span class="chip chip-azure chip-dot">BNB Chain</span>
+      <span class="chip chip-ink chip-dot">TRON</span>
+      <span class="chip chip-dot">Bitcoin</span>
+    </div>
+    <span class="chains-more">+ more added regularly</span>
+    <p class="chains-stat"><b>~90%</b> of active addresses mapped<br><b>Billions</b> of transfers</p>
+  </div>
+</section>
+
+<!-- ══════════════════ STATS ══════════════════ -->
+<section class="section section-tint section-round">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num" data-count="90" data-suffix="%" data-prefix="~">~0<span class="accent">%</span></div>
+        <div class="stat-label">Active addresses mapped</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="4" data-suffix=" chains">0<span class="accent"> chains</span></div>
+        <div class="stat-label">ETH · BNB · TRON · BTC</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="51" data-suffix="">0<span class="accent">+</span></div>
+        <div class="stat-label">Coins &amp; tokens read</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="0" data-suffix="">0<span class="accent">%</span></div>
+        <div class="stat-label">Third-party data dependency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ HOW IT WORKS ══════════════════ -->
+<section class="section section-tint" id="how">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-copy">
+        <span class="eyebrow">How it works</span>
+        <h2 class="display h2 reveal">Every deposit, instantly answered.</h2>
+        <p class="lede">The moment a deposit lands, Whal3Core reads the wallet and returns a verdict on the player. No form to fill, no history to wait for.</p>
+        <ul class="ticks">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>Triggered on deposit.</strong> It runs itself the instant funds arrive.</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>Two scores, never blended.</strong> Value and risk stay separate, so the truth never hides inside an average.</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>Unlimited checks.</strong> Re-read a player as often as you need, at no extra cost.</span></li>
+        </ul>
+      </div>
+
+      <div class="scores">
+        <div class="score panel panel-lift">
+          <div class="score-dial">
+            <svg viewBox="0 0 104 104" aria-hidden="true">
+              <circle class="track" cx="52" cy="52" r="45"/>
+              <circle class="fill" cx="52" cy="52" r="45" stroke="#2f8fd4" data-dash="82"/>
+            </svg>
+            <span class="num">82<small>/100</small></span>
+          </div>
+          <div class="score-body">
+            <div class="k">VIP probability</div>
+            <p>Rising deposits, loyal play. Worth a host, early.</p>
+            <div class="score-bars"><i class="on-azure"></i><i class="on-azure"></i><i class="on-azure"></i><i class="on-azure"></i><i></i></div>
+          </div>
+        </div>
+
+        <div class="score panel panel-lift">
+          <div class="score-dial">
+            <svg viewBox="0 0 104 104" aria-hidden="true">
+              <circle class="track" cx="52" cy="52" r="45"/>
+              <circle class="fill" cx="52" cy="52" r="45" stroke="#4a6076" data-dash="55"/>
+            </svg>
+            <span class="num" style="font-size:16px">Mod.<small>risk</small></span>
+          </div>
+          <div class="score-body">
+            <div class="k">Risk level</div>
+            <p>Fast cash-out cycling. Watch, don't block.</p>
+            <div class="score-bars"><i class="on-slate"></i><i class="on-slate"></i><i class="on-slate"></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CROSS-CASINO ══════════════════ -->
+<section class="section" id="cross-casino">
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="split-copy">
+        <span class="eyebrow">Cross-casino</span>
+        <h2 class="display h2 reveal">See the whole wallet. Win back what you're losing.</h2>
+        <p class="lede">Whal3Core shows where a player's deposits actually go, across every casino it can see, even the ones no public list has ever named.</p>
+        <ul class="ticks">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>Share of wallet, per player.</strong> Know precisely what slice is yours.</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>Unlabelled casinos, surfaced.</strong> Identified on-chain by behaviour, not by a public list.</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>A target for retention.</strong> A reload offer aimed at the 38% going to Stake beats ten blind campaigns.</span></li>
+        </ul>
+      </div>
+
+      <div class="panel panel-lift wallet-card">
+        <div class="sow-bar" data-sow>
+          <span class="sow-stake" style="flex:38">38% Stake</span>
+          <span class="sow-you" style="flex:29">29% You</span>
+          <span class="sow-gamdom" style="flex:18">18% Gamdom</span>
+          <span class="sow-unknown" style="flex:15">15% ?</span>
+        </div>
+        <div class="sow-legend">
+          <span><i style="background:#0b1017"></i>You hold 29%</span>
+          <span><i style="background:#2d5f8a"></i>Known competitor</span>
+          <span><i style="background:#ccd4de"></i>No public label</span>
+        </div>
+
+        <div class="casino-row">
+          <span class="casino-badge">S</span>
+          <span>
+            <span class="casino-name">Stake</span>
+            <span class="casino-sub">Largest leak · 38% of wallet</span>
+          </span>
+          <span class="casino-share">38%</span>
+        </div>
+        <div class="casino-row">
+          <span class="casino-badge">G</span>
+          <span>
+            <span class="casino-name">Gamdom</span>
+            <span class="casino-sub">Secondary destination · known</span>
+          </span>
+          <span class="casino-share">18%</span>
+        </div>
+        <div class="casino-row">
+          <span class="casino-badge ghost">?</span>
+          <span>
+            <span class="casino-name">Unlabelled casino</span>
+            <span class="casino-sub">No public label · identified by behaviour</span>
+          </span>
+          <span class="casino-share">15%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ THE DOSSIER ══════════════════ -->
+<section class="section section-tint section-round">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-copy">
+        <span class="eyebrow">The dossier</span>
+        <h2 class="display h2 reveal">Not a score. A briefing.</h2>
+        <p class="lede">Every wallet opens into a full dossier built for the people who use it, not a number to interpret.</p>
+        <ul class="ticks">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>Plain-language read.</strong> The signals in words your team can act on.</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>Ranked actions.</strong> Assign a host, close the gap, set an alert.</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <span><strong>On-chain evidence.</strong> The full history behind every score, reproducible.</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="panel airead">
+          <div class="airead-head">
+            <span class="chip chip-steel chip-dot">AI read</span>
+            <span class="t">Generated</span>
+          </div>
+          <p>An <span class="hl-azure">emerging whale</span>: deposit sizes are climbing and play is loyal, putting VIP probability at <b>82 / 100</b>. <span class="hl-steel">38%</span> of the wallet flows to Stake, only <b>29%</b> to you. Risk is <span class="hl-slate">moderate</span>: funds cycle out fast, so watch withdrawals rather than block.</p>
+        </div>
+
+        <div class="actions">
+          <a class="action" href="#access">
+            <span class="action-n">1</span>
+            <span>
+              <span class="action-t">Assign a VIP host</span>
+              <span class="action-s">High value, still early.</span>
+            </span>
+            <span class="action-go">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="action" href="#access">
+            <span class="action-n">2</span>
+            <span>
+              <span class="action-t">Close the Stake gap</span>
+              <span class="action-s">Aim a reload at the 38% leaking out.</span>
+            </span>
+            <span class="action-go">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="action" href="#access">
+            <span class="action-n">3</span>
+            <span>
+              <span class="action-t">Set a withdrawal alert</span>
+              <span class="action-s">Flag a large cash-out on spike.</span>
+            </span>
+            <span class="action-go">Open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PLATFORM ══════════════════ -->
+<section class="section" id="platform">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Inside the platform</span>
+        <h2 class="display h2 reveal">See exactly what your team sees.</h2>
+        <p class="lede">Every wallet opens into a working dossier. Move between the verdict, the cross-casino footprint, the on-chain activity, and the compliance view.</p>
+      </div>
+      <div class="section-meta">Wallet 0x7a3F…b29C<br>4 casinos seen<br>First seen 6mo ago</div>
+    </div>
+
+    <div class="app">
+      <div class="app-bar">
+        <span class="app-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="app-url" id="appUrl">whal3core.app · wallet/0x7a3F…b29C · overview</span>
+      </div>
+
+      <div class="app-tabs" role="tablist" aria-label="Dossier views">
+        <button class="app-tab" role="tab" aria-selected="true" aria-controls="p-verdict" id="t-verdict" data-url="whal3core.app · wallet/0x7a3F…b29C · overview">Verdict</button>
+        <button class="app-tab" role="tab" aria-selected="false" aria-controls="p-casinos" id="t-casinos" data-url="whal3core.app · wallet/0x7a3F…b29C · casinos">Casinos</button>
+        <button class="app-tab" role="tab" aria-selected="false" aria-controls="p-activity" id="t-activity" data-url="whal3core.app · wallet/0x7a3F…b29C · activity">Activity</button>
+        <button class="app-tab" role="tab" aria-selected="false" aria-controls="p-compliance" id="t-compliance" data-url="whal3core.app · wallet/0x7a3F…b29C · compliance">Compliance</button>
+      </div>
+
+      <div class="app-body">
+
+        <!-- VERDICT -->
+        <div class="app-panel" role="tabpanel" id="p-verdict" aria-labelledby="t-verdict">
+          <div class="wallet-head">
+            <span class="addr">0x7a3F…b29C</span>
+            <span class="meta">Behaviour: <b>Emerging whale</b> · seen on 4 casinos · first seen 6mo ago</span>
+            <span class="chip chip-azure chip-dot conf">Confidence high</span>
+          </div>
+
+          <div class="verdict-pair">
+            <div class="verdict clay clay-azure">
+              <div class="k">VIP probability</div>
+              <div class="v">82<small>/100</small></div>
+            </div>
+            <div class="verdict clay clay-slate">
+              <div class="k">Risk level</div>
+              <div class="v">Moderate</div>
+            </div>
+          </div>
+
+          <div class="panel airead" style="margin-bottom:0">
+            <div class="airead-head">
+              <span class="chip chip-steel chip-dot">AI read</span>
+              <span class="t">Generated</span>
+            </div>
+            <p>An <span class="hl-azure">emerging whale</span>: deposits are climbing and play is loyal, VIP probability <b>82 / 100</b>. <span class="hl-steel">38%</span> flows to Stake, <b>29%</b> to you. Risk <span class="hl-slate">moderate</span>: funds cycle out fast.</p>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi"><div class="v">$48.2k</div><div class="k">Lifetime deposits, all casinos</div></div>
+            <div class="kpi"><div class="v">29%</div><div class="k">Your share of wallet</div></div>
+            <div class="kpi"><div class="v">2k USDT</div><div class="k">This deposit</div></div>
+            <div class="kpi"><div class="v">2h ago</div><div class="k">Last activity</div></div>
+          </div>
+        </div>
+
+        <!-- CASINOS -->
+        <div class="app-panel" role="tabpanel" id="p-casinos" aria-labelledby="t-casinos" hidden>
+          <div class="panel wallet-card">
+            <div class="sow-bar">
+              <span class="sow-stake" style="flex:38">38% Stake</span>
+              <span class="sow-you" style="flex:29">29% You</span>
+              <span class="sow-gamdom" style="flex:18">18% Gamdom</span>
+              <span class="sow-unknown" style="flex:15">15% ?</span>
+            </div>
+            <div class="sow-legend" style="border-bottom:0;padding-bottom:0;margin-bottom:0">
+              <span><i style="background:#0b1017"></i>You hold 29%</span>
+              <span><i style="background:#2d5f8a"></i>Known competitor</span>
+              <span><i style="background:#ccd4de"></i>No public label</span>
+            </div>
+          </div>
+
+          <div class="panel wallet-card">
+            <div class="casino-row">
+              <span class="casino-badge">S</span>
+              <span>
+                <span class="casino-name">Stake <span class="chip chip-steel" style="margin-left:6px">Known</span></span>
+                <span class="casino-sub">Largest leak in this wallet · last deposit 2 days ago · confidence high</span>
+              </span>
+              <span class="casino-share">38%</span>
+            </div>
+            <div class="casino-row">
+              <span class="casino-badge">G</span>
+              <span>
+                <span class="casino-name">Gamdom <span class="chip chip-steel" style="margin-left:6px">Known</span></span>
+                <span class="casino-sub">Secondary destination · last deposit 9 days ago · confidence high</span>
+              </span>
+              <span class="casino-share">18%</span>
+            </div>
+            <div class="casino-row">
+              <span class="casino-badge ghost">?</span>
+              <span>
+                <span class="casino-name">Unlabelled casino <span class="chip chip-chrome" style="margin-left:6px">By behaviour</span></span>
+                <span class="casino-sub">No public label, identified on-chain · pattern deposit-retention · confidence medium</span>
+              </span>
+              <span class="casino-share">15%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIVITY -->
+        <div class="app-panel" role="tabpanel" id="p-activity" aria-labelledby="t-activity" hidden>
+          <div class="feed">
+            <div class="feed-item">
+              <span class="feed-dot clay clay-azure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+              <span>
+                <span class="feed-t">Deposit · 2,000 USDT to you</span>
+                <span class="feed-s">VIP queue triggered automatically</span>
+              </span>
+              <span class="feed-time">2 hours ago</span>
+            </div>
+            <div class="feed-item">
+              <span class="feed-dot clay clay-slate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span>
+              <span>
+                <span class="feed-t">Withdrawal · 5,000 USDT</span>
+                <span class="feed-s">Routed toward a known competitor wallet</span>
+              </span>
+              <span class="feed-time">1 day ago</span>
+            </div>
+            <div class="feed-item">
+              <span class="feed-dot clay clay-steel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></span>
+              <span>
+                <span class="feed-t">New casino link detected</span>
+                <span class="feed-s">Unlabelled casino, identified by behaviour</span>
+              </span>
+              <span class="feed-time">3 days ago</span>
+            </div>
+            <div class="feed-item">
+              <span class="feed-dot clay clay-azure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+              <span>
+                <span class="feed-t">Deposit · 1,200 USDT to you</span>
+                <span class="feed-s">Consistent with a rising deposit curve</span>
+              </span>
+              <span class="feed-time">5 days ago</span>
+            </div>
+            <div class="feed-item">
+              <span class="feed-dot clay clay-dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
+              <span>
+                <span class="feed-t">Wallet first seen on-chain</span>
+                <span class="feed-s">Start of the recorded history for this wallet</span>
+              </span>
+              <span class="feed-time">6 months ago</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPLIANCE -->
+        <div class="app-panel" role="tabpanel" id="p-compliance" aria-labelledby="t-compliance" hidden>
+          <div class="wallet-head">
+            <span class="addr" style="font-size:14px">Source of funds &amp; AML</span>
+            <span class="meta">Screened at the moment of deposit</span>
+          </div>
+          <div class="aml-grid">
+            <div class="aml-row">
+              <span><span class="t">Sanctions screening</span><span class="s">OFAC, EU, UN lists</span></span>
+              <span class="chip chip-azure chip-dot">Clean</span>
+            </div>
+            <div class="aml-row">
+              <span><span class="t">Mixer exposure</span><span class="s">2 hops from a known mixer</span></span>
+              <span class="chip chip-slate chip-dot">Flag</span>
+            </div>
+            <div class="aml-row">
+              <span><span class="t">Source of funds</span><span class="s">Funded from a major exchange</span></span>
+              <span class="chip chip-steel chip-dot">Exchange</span>
+            </div>
+            <div class="aml-row">
+              <span><span class="t">Darknet exposure</span><span class="s">No direct interaction</span></span>
+              <span class="chip chip-azure chip-dot">None</span>
+            </div>
+          </div>
+
+          <div class="wallet-head">
+            <span class="addr" style="font-size:14px">Wallet holdings</span>
+          </div>
+          <div class="holdings">
+            <div class="holding">
+              <span class="sym">USDT</span>
+              <span class="name">Tether</span>
+              <span class="amt">18,400</span>
+              <span class="chain">TRON · ERC-20</span>
+            </div>
+            <div class="holding">
+              <span class="sym">ETH</span>
+              <span class="name">Ethereum</span>
+              <span class="amt">4.20</span>
+              <span class="chain">0x7a3F…b29C</span>
+            </div>
+            <div class="holding">
+              <span class="sym">BTC</span>
+              <span class="name">Bitcoin</span>
+              <span class="amt">0.31</span>
+              <span class="chain">bc1q…8t4z</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ USE CASES ══════════════════ -->
+<section class="section section-tint section-round">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Where it earns its keep</span>
+        <h2 class="display h2 reveal">One read on a wallet. Six jobs done.</h2>
+        <p class="lede">The same instant verdict drives revenue, retention, fraud and compliance work from a single source of truth.</p>
+      </div>
+      <div class="section-meta">Revenue<br>Retention<br>Fraud &amp; AML</div>
+    </div>
+
+    <div class="cases">
+      <article class="case clay clay-azure tilt">
+        <span class="case-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span>
+        <h3>Catch whales on day one</h3>
+        <p>A proven high-value player gets a VIP host before they cool off.</p>
+      </article>
+      <article class="case clay clay-steel tilt">
+        <span class="case-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 15v5h-5M20 9V4h-5M4 15v5h5"/><path d="M4 4l6 6M20 20l-6-6M20 4l-6 6M4 20l6-6"/></svg></span>
+        <h3>Win back share of wallet</h3>
+        <p>See what's leaking to a competitor and aim a reload that moves the split.</p>
+      </article>
+      <article class="case clay clay-dark tilt">
+        <span class="case-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>
+        <h3>Shut down multi-accounting</h3>
+        <p>Accounts sharing wallet infrastructure surface on-chain before the farm.</p>
+      </article>
+      <article class="case clay clay-slate tilt">
+        <span class="case-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h13l-2 4 2 4H5"/></svg></span>
+        <h3>Screen funds before payout</h3>
+        <p>Sanctions and mixer exposure flagged ahead of a withdrawal going out.</p>
+      </article>
+      <article class="case clay clay-dark tilt">
+        <span class="case-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></svg></span>
+        <h3>See a cash-out coming</h3>
+        <p>Fast deposit-to-withdraw cycling reads as pressure, with an alert on spike.</p>
+      </article>
+      <article class="case clay clay-azure tilt">
+        <span class="case-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+        <h3>One dossier per player</h3>
+        <p>Value, risk, casinos, network and AML in a single view to act on.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ INDUSTRY FIRST ══════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">An industry first</span>
+        <h2 class="display h2 reveal">There is nothing else that does this.</h2>
+        <p class="lede">Other tools answer a different question. Whal3Core is the only one built to tell a casino who a player is, across every casino, from the wallet alone.</p>
+      </div>
+    </div>
+
+    <div class="stance">
+      <div class="stance-col muted">
+        <span class="stance-tag">AML &amp; chain tools</span>
+        <p class="stance-q">"Are these funds dirty?"</p>
+        <p>Chainalysis, Elliptic, TRM. Built to catch criminals and satisfy regulators, not to value players.</p>
+      </div>
+      <div class="stance-col muted">
+        <span class="stance-tag">Casino analytics &amp; BI</span>
+        <p class="stance-q">"What happens on my platform?"</p>
+        <p>Strong on your own data, blind the instant a player deposits elsewhere.</p>
+      </div>
+      <div class="stance-col clay clay-dark">
+        <span class="stance-tag">Whal3Core</span>
+        <p class="stance-q">"Who is this player, across every casino, value and risk, from the wallet alone?"</p>
+        <p>Cross-casino player intelligence read off the chain, before they've won or lost a cent with you.</p>
+      </div>
+    </div>
+
+    <div class="stats" style="margin-top:48px">
+      <div class="stat">
+        <div class="stat-num" data-count="4" data-suffix=" chains">0<span class="accent"> chains</span></div>
+        <div class="stat-label">ETH · BNB · TRON · BTC, more added regularly</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="90" data-prefix="~" data-suffix="%">~0<span class="accent">%</span></div>
+        <div class="stat-label">Of active on-chain addresses, mapped</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Billions</div>
+        <div class="stat-label">Of transfers, current to the chain tip</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Our nodes</div>
+        <div class="stat-label">Zero third-party data dependency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COMPETITORS & COST ══════════════════ -->
+<section class="section section-tint section-round">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Competitors &amp; cost</span>
+        <h2 class="display h2 reveal">Trusted tools, built for a different job.</h2>
+        <p class="lede">Operators know Chainalysis, Elliptic and TRM, and they're excellent at what they were built for: compliance. None of them was built to tell a casino who its next whale is, across every casino, from the wallet. Here is where the lines fall, and what each one costs.</p>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th><span>AML &amp; chain analytics</span>Chainalysis · Elliptic · TRM</th>
+            <th><span>Casino BI &amp; analytics</span>Own-platform data</th>
+            <th class="own"><span>Whal3Core</span>Wallet intelligence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="feat">Sanctions, AML &amp; source-of-funds</td><td><span class="yes">✓</span></td><td><span class="no">–</span></td><td class="own"><span class="yes">✓</span></td></tr>
+          <tr><td class="feat">Built specifically for iGaming</td><td><span class="no">–</span></td><td><span class="part">Some</span></td><td class="own"><span class="yes">✓</span></td></tr>
+          <tr><td class="feat">Player value &amp; VIP probability on deposit</td><td><span class="no">–</span></td><td><span class="part">Own data only</span></td><td class="own"><span class="yes">✓</span></td></tr>
+          <tr><td class="feat">Cross-casino footprint &amp; share-of-wallet</td><td><span class="no">–</span></td><td><span class="no">–</span></td><td class="own"><span class="yes">✓</span></td></tr>
+          <tr><td class="feat">A verdict the instant a player deposits</td><td><span class="part">Risk only</span></td><td><span class="no">–</span></td><td class="own"><span class="yes">✓</span></td></tr>
+          <tr><td class="feat">Linked-account &amp; multi-accounting fraud</td><td><span class="part">Partial</span></td><td><span class="part">Own data only</span></td><td class="own"><span class="yes">✓</span></td></tr>
+          <tr><td class="feat">Dual verdict, value and risk scored apart</td><td><span class="no">–</span></td><td><span class="no">–</span></td><td class="own"><span class="yes">✓</span></td></tr>
+          <tr><td class="feat">Typical cost</td><td>~$40k–$250k+ / yr</td><td>Varies</td><td class="own"><b>From $1,000/mo · ~$12k/yr</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cost">
+      <div class="cost-card panel">
+        <div class="k">AML &amp; chain analytics</div>
+        <div class="v">$40k–$250k+ <small>/yr</small></div>
+        <p>Reactor seats start around $40,000 a year. A mid-sized programme runs $120k–$250k+, custom-quoted on a multi-year contract, priced to clear regulators, and it still can't value a player.</p>
+      </div>
+      <div class="cost-card clay clay-dark">
+        <div class="k">Whal3Core</div>
+        <div class="v">From $1,000 <small>/mo · ~$12k/yr</small></div>
+        <p>$1,000/mo covers your first ~1,000 active players, counted once by wallet. No revenue share, AML built in. A whole tier below a compliance suite, doing the job they can't.</p>
+      </div>
+    </div>
+
+    <p class="cost-note">Competitor pricing is not officially published. Figures are reported estimates (Chainalysis Reactor from ~$40k per seat/yr, mid-sized programmes commonly $120k–$250k/yr, large enterprise contracts higher), shown for comparison only. Product names are trademarks of their respective owners.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ TRUSTSEED GROUP ══════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">The Trustseed group</span>
+        <h2 class="display h2 reveal">One layer of a complete operator stack.</h2>
+        <p class="lede">Whal3Core isn't a side project. It's built by Trustseed, the group behind the WAG3R casino platform, the H.O.G affiliate engine, and Aff-Starter's growth operations. Run it on its own, or as the wallet-intelligence layer inside WAG3R.</p>
+      </div>
+    </div>
+
+    <div class="group-grid">
+      <article class="group-card panel panel-lift">
+        <span class="group-logo"><img src="assets/elogo-wag3r.png" alt="WAG3R"></span>
+        <span class="dom">wag3r.bet</span>
+        <p>The platform. A full operating system to run a crypto casino, with payments, risk, KYC and player tooling in one stack.</p>
+        <span class="chip">Casino platform</span>
+      </article>
+
+      <article class="group-card clay clay-dark">
+        <span class="group-logo"><img src="assets/elogo-whal3core.png" alt="Whal3Core"></span>
+        <span class="dom">whal3core.com</span>
+        <p>Wallet intelligence. The instant a player deposits, know their value, their risk and every casino they play, from the chain alone.</p>
+        <span class="chip chip-azure">You're here</span>
+      </article>
+
+      <article class="group-card panel panel-lift">
+        <span class="group-logo"><img src="assets/elogo-aff-starter.png" alt="Aff-Starter"></span>
+        <span class="dom">aff-starter.com</span>
+        <p>Managed growth. The affiliate and traffic operation that brings real players to the door, run by a team that does this for a living.</p>
+        <span class="chip">Growth &amp; services</span>
+      </article>
+
+      <article class="group-card panel panel-lift">
+        <span class="group-logo"><img src="assets/elogo-the-h-o-g.svg" alt="The H.O.G"></span>
+        <span class="dom">booking.thehog.io</span>
+        <p>The affiliate engine. Source intelligence and deal management that picks the traffic worth paying for and tracks it to first deposit.</p>
+        <span class="chip">Affiliate platform</span>
+      </article>
+    </div>
+
+    <div class="group-flow">
+      <span><b>Aff-Starter</b> brings the players</span>
+      <span class="arr">→</span>
+      <span><b>WAG3R</b> runs the casino</span>
+      <span class="arr">→</span>
+      <span><b>Whal3Core</b> reads every wallet</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COVERAGE ══════════════════ -->
+<section class="section section-tint section-round">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Coverage</span>
+        <h2 class="display h2 reveal">The coins and tokens your players actually deposit.</h2>
+        <p class="lede">Whal3Core is crypto-native. We read the native coin and the major tokens on each chain, including the stablecoins that make up most casino deposits, and we add more chains regularly.</p>
+      </div>
+      <div class="section-meta">4 chains<br>51 assets read<br>Updated regularly</div>
+    </div>
+
+    <div class="coverage">
+      <article class="panel panel-lift chain-card">
+        <div class="chain-head">
+          <span class="chain-mark chain-btc">BTC</span>
+          <span>
+            <span class="chain-name">Bitcoin</span>
+            <span class="chain-native">Native coin · BTC</span>
+          </span>
+        </div>
+        <div class="token-list"><span class="token">BTC</span></div>
+        <div class="chain-foot">Native coin, no smart-contract tokens</div>
+      </article>
+
+      <article class="panel panel-lift chain-card">
+        <div class="chain-head">
+          <span class="chain-mark chain-eth">ETH</span>
+          <span>
+            <span class="chain-name">Ethereum</span>
+            <span class="chain-native">Native coin · ETH</span>
+          </span>
+        </div>
+        <div class="token-list">
+          <span class="token stable">USDT</span><span class="token stable">USDC</span><span class="token stable">DAI</span><span class="token stable">BUSD</span><span class="token">FRAX</span><span class="token">USDe</span><span class="token">GHO</span><span class="token">WETH</span><span class="token">WBTC</span><span class="token">stETH</span><span class="token">rETH</span><span class="token">renBTC</span><span class="token">TORN</span><span class="token">REN</span><span class="token">LINK</span><span class="token">UNI</span><span class="token">AAVE</span><span class="token">MKR</span><span class="token">CRV</span><span class="token">COMP</span><span class="token">SNX</span><span class="token">LDO</span><span class="token">SHIB</span><span class="token">PEPE</span><span class="token">MATIC</span>
+        </div>
+        <div class="chain-foot">chainId 1 · 26 tokens</div>
+      </article>
+
+      <article class="panel panel-lift chain-card">
+        <div class="chain-head">
+          <span class="chain-mark chain-bnb">BNB</span>
+          <span>
+            <span class="chain-name">BNB Chain</span>
+            <span class="chain-native">Native coin · BNB</span>
+          </span>
+        </div>
+        <div class="token-list">
+          <span class="token stable">USDT</span><span class="token stable">USDC</span><span class="token stable">DAI</span><span class="token stable">BUSD</span><span class="token">WBNB</span><span class="token">ETH</span><span class="token">BTCB</span><span class="token">DOGE</span><span class="token">XRP</span><span class="token">DOT</span><span class="token">CAKE</span><span class="token">LINK</span><span class="token">ADA</span><span class="token">XVS</span><span class="token">TWT</span><span class="token">FLOKI</span>
+        </div>
+        <div class="chain-foot">chainId 56 · 16 tokens</div>
+      </article>
+
+      <article class="panel panel-lift chain-card">
+        <div class="chain-head">
+          <span class="chain-mark chain-trx">TRX</span>
+          <span>
+            <span class="chain-name">TRON</span>
+            <span class="chain-native">Native coin · TRX</span>
+          </span>
+        </div>
+        <div class="token-list">
+          <span class="token stable">USDT</span><span class="token stable">USDC</span><span class="token stable">TUSD</span><span class="token stable">USDD</span><span class="token">WTRX</span><span class="token">SUN</span><span class="token">WIN</span><span class="token">BTT</span><span class="token">JST</span>
+        </div>
+        <div class="chain-foot">chainId 195 · 9 tokens</div>
+      </article>
+    </div>
+
+    <p class="coverage-note"><b>USDT and USDC</b> are read across their ERC-20, BEP-20 and TRC-20 forms, which is where the bulk of deposit volume lives.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ INTEGRATION ══════════════════ -->
+<section class="section" id="integration">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Integration</span>
+        <h2 class="display h2 reveal">Live on your deposits in weeks, not quarters.</h2>
+        <p class="lede">Whal3Core plugs into your existing stack. No migration and no change to how players deposit. Point your deposit events at it and start getting verdicts.</p>
+      </div>
+      <div class="section-meta">Webhook / API<br>1 to 2 weeks<br>Then live</div>
+    </div>
+
+    <div class="steps">
+      <article class="step clay clay-azure">
+        <span class="step-n">1</span>
+        <h3>Connect your deposits</h3>
+        <p>Send your deposit events to Whal3Core with a single webhook or API call. Nothing changes about how players pay you.</p>
+        <span class="tag">Webhook / API</span>
+      </article>
+      <article class="step clay clay-steel">
+        <span class="step-n">2</span>
+        <h3>Calibrate to your markets</h3>
+        <p>We tune the engine to your geos and seed the cross-casino registry from the major brands, so the verdicts fit your book from day one.</p>
+        <span class="tag">~1 to 2 weeks</span>
+      </article>
+      <article class="step clay clay-dark">
+        <span class="step-n">3</span>
+        <h3>Go live on every deposit</h3>
+        <p>The dossier for your ops team, scores piped into your CRM, and alerts into Telegram, acting on the verdict the moment funds land.</p>
+        <span class="tag">Dossier · CRM · Telegram</span>
+      </article>
+    </div>
+
+    <div class="integration-facts">
+      <span class="chip chip-azure chip-dot">Deposit webhook or API</span>
+      <span class="chip chip-azure chip-dot">Sits alongside your existing platform</span>
+      <span class="chip chip-azure chip-dot">Scores into your CRM</span>
+      <span class="chip chip-azure chip-dot">Alerts into Telegram</span>
+      <span class="chip chip-azure chip-dot">Standalone or part of WAG3R</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PRICING ══════════════════ -->
+<section class="section section-tint section-round" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Pricing</span>
+        <h2 class="display h2 reveal">Priced per active player.</h2>
+        <p class="lede">Charged for the players active each month, counted once per player by wallet, with unlimited checks inside that month. Never a cut of your revenue.</p>
+      </div>
+    </div>
+
+    <div class="founding clay clay-steel">
+      <span class="t">Founding 10</span>
+      <p>First ten brands get <b>50% off for 12 months</b> on Growth or Scale, 12-month contract.</p>
+      <span class="when">Launching August 2026</span>
+    </div>
+
+    <div class="plans">
+      <article class="plan panel panel-lift">
+        <div class="plan-name">Launch</div>
+        <div class="plan-price">$1,000 <small>/mo</small></div>
+        <ul class="ticks">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Covers <strong>1,000 active players / mo</strong></span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>$1.00</strong> per active player beyond</span></li>
+        </ul>
+        <a class="btn btn-ghost" href="#access">Request access
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </article>
+
+      <article class="plan clay clay-dark">
+        <span class="chip chip-azure plan-flag">Common</span>
+        <div class="plan-name">Growth</div>
+        <div class="plan-price">$3,500 <small>/mo</small></div>
+        <ul class="ticks">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Covers <strong>5,000 active players / mo</strong></span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>$0.70</strong> per active player beyond</span></li>
+        </ul>
+        <a class="btn btn-azure" href="#access">Request access
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </article>
+
+      <article class="plan panel panel-lift">
+        <div class="plan-name">Scale</div>
+        <div class="plan-price">$10,000 <small>/mo</small></div>
+        <ul class="ticks">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Covers <strong>20,000 active players / mo</strong></span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>$0.50</strong> per active player beyond</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Priority calibration &amp; support</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Custom rate past 20k</span></li>
+        </ul>
+        <a class="btn btn-ghost" href="#access">Talk to us
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </article>
+    </div>
+
+    <p class="includes"><b>Every tier includes:</b> Dual verdict · Dossier · Live alerts · Source-of-funds &amp; AML · Cross-casino &amp; share-of-wallet · Linked-account fraud · CRM &amp; ops integration. Running the full WAG3R platform? 50% off any tier.</p>
+
+    <div class="commitment">
+      <div class="commit best">
+        <div class="commit-head">
+          <span class="t">12-month contract</span>
+          <span class="chip chip-steel chip-dot">Best value</span>
+        </div>
+        <ul class="ticks">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>No setup fee</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Three months paid upfront</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>Save 20%</strong> on the total when you pay the 12 months upfront</span></li>
+        </ul>
+      </div>
+      <div class="commit">
+        <div class="commit-head">
+          <span class="t">Rolling, month to month</span>
+        </div>
+        <ul class="ticks">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>$3,000</strong> setup fee</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>First month paid upfront</span></li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>30 days notice to cancel, no lock-in</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FAQ ══════════════════ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Questions, answered</span>
+        <h2 class="display h2 reveal">Everything an operator asks before plugging us in.</h2>
+        <p class="lede">The straight version. If something here is not covered, put it to us in the walkthrough.</p>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-t">Setup &amp; integration</div>
+      <details class="faq"><summary>Does this change how my players deposit?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>No. Players deposit exactly as they do today. You send us the deposit event over a webhook or API call, and we hand back the verdict. Nothing about your cashier, your wallets, or the player experience changes.</p></div></details>
+      <details class="faq"><summary>What do I actually have to send you?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>The deposit event: the wallet address, the chain, the amount, a timestamp, and your own player reference. That is enough for us to read the wallet and return value and risk. Your player reference can stay pseudonymous if you prefer.</p></div></details>
+      <details class="faq"><summary>Do I have to replace my platform, CRM, or AML stack?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>No. Whal3Core sits alongside whatever you already run. It does not migrate data or take over any function. Run it standalone next to your current platform, or as the wallet-intelligence layer inside WAG3R.</p></div></details>
+      <details class="faq"><summary>How long does it take to go live?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>You can be live in weeks, not quarters. Once your deposit events are connected, we spend roughly one to two weeks calibrating the engine to your geos and seeding the cross-casino registry, then you go live on every deposit.</p></div></details>
+      <details class="faq"><summary>How do we act on a verdict once it is live?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>Three ways, usually together: the full dossier for your ops team, scores piped into your CRM for segmentation and automation, and alerts into Telegram so the right person sees a whale or a risk the moment funds land.</p></div></details>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-t">Data, privacy &amp; security</div>
+      <details class="faq"><summary>Do you ever touch or custody our funds?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>Never. Whal3Core is read-only intelligence. We never hold, move, or have access to funds, keys, or wallets. We read public on-chain data and return a verdict, nothing more.</p></div></details>
+      <details class="faq"><summary>What player data do you store?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>We work from the wallet, not the person. We read public blockchain data plus the deposit event you send. We do not need player names, emails, or documents, and your player reference can be pseudonymous. Your data stays yours, and we never sell or share it.</p></div></details>
+      <details class="faq"><summary>Is this GDPR friendly?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>Designed with it in mind. You remain the controller of any player data you send, we act as your processor, and we can sign a data processing agreement. Because we lean on public on-chain data and a reference you control, the personal-data footprint is deliberately small.</p></div></details>
+      <details class="faq"><summary>Where does the intelligence come from, and how current is it?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>From our own blockchain nodes and an attribution layer we maintain ourselves, with no third-party data dependency. We map roughly 90% of active on-chain addresses across the supported chains, current to the chain tip, so a verdict reflects the wallet as it stands at the moment of deposit.</p></div></details>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-t">How the intelligence works</div>
+      <details class="faq"><summary>How accurate is it?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>The verdict is a probability and a risk read, not a guarantee, and every dossier carries a confidence level so your team knows how much weight to give it. Accuracy sharpens once we calibrate to your geos and player base. We would rather tell you confidence is low than hand you a number we cannot stand behind.</p></div></details>
+      <details class="faq"><summary>What happens with a brand-new or thin wallet?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>A wallet with little history gives us less to read, so we return a lower confidence instead of inventing a verdict. As that wallet builds a footprint, later reads get sharper. We are explicit about this rather than pretending every wallet is fully knowable.</p></div></details>
+      <details class="faq"><summary>How do you know which other casinos a player uses?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>From the on-chain footprint. We see funds moving to and from wallets we have attributed to other crypto casinos, and cross-reference them against our registry. That is what powers the cross-casino view and your share of a player's wallet.</p></div></details>
+      <details class="faq"><summary>Can a player beat it by using fresh wallets?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>A determined player can split funds across wallets, and we are honest that a clean, freshly funded wallet is the hardest case. We counter it by tracing funding hops and surfacing linked accounts that share on-chain infrastructure, which is how multi-accounting and wallet farms tend to give themselves away.</p></div></details>
+      <details class="faq"><summary>Is the VIP score the same as the risk score?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>No, and we never blend them. Value and risk are scored separately and shown side by side, because a player can be both highly valuable and high risk at once. Collapsing them into one number hides the exact cases you most need to see.</p></div></details>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-t">Scope: what it does and does not do</div>
+      <details class="faq"><summary>Is this just another AML tool?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>No. It does the AML work in full: source of funds, sanctions and mixer exposure, with risk scored on every deposit. The difference is it does not stop there. The same read also tells you who the player is worth, across every casino, from the wallet, so one verdict drives both compliance and revenue. AML-only tools answer whether funds are dirty; we answer that and who the player is.</p></div></details>
+      <details class="faq"><summary>Does it replace Chainalysis, Elliptic, or TRM?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>Not really, because they do a different primary job: compliance and forensics. We overlap on the source-of-funds read, but our reason to exist is player value and cross-casino intelligence, which they do not provide. You can run a compliance suite and Whal3Core side by side; they solve different problems.</p></div></details>
+      <details class="faq"><summary>Which chains do you support?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">
+        <p>We read the native coin and the major tokens on each chain, including the stablecoins that make up most casino deposits. USDT and USDC are covered in their ERC-20, BEP-20 and TRC-20 forms.</p>
+        <div class="table-scroll"><table class="cmp">
+          <thead><tr><th>Network</th><th>Main coin</th><th>Common tokens we read</th></tr></thead>
+          <tbody>
+            <tr><td class="feat">Bitcoin</td><td>BTC</td><td>BTC itself. Bitcoin does not carry smart-contract tokens the way the others do.</td></tr>
+            <tr><td class="feat">Ethereum</td><td>ETH</td><td>USDT, USDC, DAI, BUSD, FRAX, USDe, GHO, WETH, WBTC, stETH, rETH, renBTC, TORN, REN, LINK, UNI, AAVE, MKR, CRV, COMP, SNX, LDO, SHIB, PEPE, MATIC (chainId 1 · 26 tokens).</td></tr>
+            <tr><td class="feat">BNB Chain</td><td>BNB</td><td>USDT, USDC, DAI, BUSD, WBNB, ETH, BTCB, DOGE, XRP, DOT, CAKE, LINK, ADA, XVS, TWT, FLOKI (chainId 56 · 16 tokens).</td></tr>
+            <tr><td class="feat">TRON</td><td>TRX</td><td>USDT, USDC, TUSD, USDD, WTRX, SUN, WIN, BTT, JST (chainId 195 · 9 tokens).</td></tr>
+          </tbody>
+        </table></div>
+        <p>We add more chains on a regular basis, so coverage keeps widening.</p>
+      </div></details>
+      <details class="faq"><summary>Does it work for fiat deposits?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>Whal3Core is crypto-native. It reads on-chain wallets, so a fiat deposit with no wallet behind it is outside what it can see. For fiat players you lean on your existing tooling; for crypto deposits, this is the layer.</p></div></details>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-t">Pricing &amp; commercial</div>
+      <details class="faq"><summary>How is it priced?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>Per active player each month, counted once per player by wallet, with unlimited checks inside that month, and never a cut of your revenue. Plans start at $1,000 a month, which covers your first 1,000 active players.</p></div></details>
+      <details class="faq"><summary>What counts as an active player?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>A unique player wallet that you check in a given month. You are charged once for that wallet no matter how many times you query it that month, so re-checking a returning player costs nothing extra.</p></div></details>
+      <details class="faq"><summary>Is there a contract or minimum?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>Two ways. A 12-month contract carries no setup fee, with three months paid upfront, and you save 20% on the total if you pay all twelve months upfront. Or go rolling month to month: a $3,000 setup fee, the first month upfront, and 30 days notice to cancel. Founding-ten brands also lock in 50% off for a full year on Growth or Scale.</p></div></details>
+      <details class="faq"><summary>When does it launch?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a"><p>August 2026, with the founding cohort forming now. The first ten brands lock in half price for twelve months.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FINAL CTA ══════════════════ -->
+<section class="final" id="access">
+  <div class="wrap">
+    <div class="final-card">
+      <span class="orb orb-1" aria-hidden="true"></span>
+      <span class="orb orb-2" aria-hidden="true"></span>
+      <span class="eyebrow">Launching August 2026</span>
+      <h2 class="display h2 reveal">Be one of the <span class="accent">founding ten.</span></h2>
+      <p>We're opening Whal3Core to the first ten brands at launch, at half price for a full year. Tell us about your operation and we'll set up a walkthrough.</p>
+      <div class="final-actions">
+        <a class="btn btn-azure" href="mailto:hello@whal3core.com?subject=Whal3Core%20access%20request">Request access
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="btn btn-ghost" href="mailto:hello@whal3core.com?subject=Whal3Core%20demo">Book a demo
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+      <div class="seats" aria-label="Ten founding places">
+        <span class="seat">1</span><span class="seat">2</span><span class="seat">3</span><span class="seat">4</span><span class="seat">5</span>
+        <span class="seat">6</span><span class="seat">7</span><span class="seat">8</span><span class="seat">9</span><span class="seat">10</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 14c2.4 0 2.4-2 4.8-2s2.4 2 4.8 2 2.4-2 4.8-2 2.4 2 4.6 2"/>
+              <path d="M12 3.5v5.5"/>
+              <circle cx="12" cy="18.5" r="1.6" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span class="a">Whal3Core</span>
+            <span class="b">Wallet intelligence</span>
+          </span>
+        </a>
+        <p>Crypto-native wallet intelligence for iGaming operators. Part of the Trustseed group, alongside WAG3R and Aff-Starter.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#how">How it works</a>
+        <a href="#platform">Platform</a>
+        <a href="#cross-casino">Cross-casino</a>
+        <a href="#integration">Integration</a>
+      </div>
+      <div class="footer-col">
+        <h4>Pricing</h4>
+        <a href="#pricing">Plans</a>
+        <a href="#access">Founding ten</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#access">Request access</a>
+        <a href="mailto:hello@whal3core.com">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Whal3Core · Trustseed FZCO</span>
+      <span>Whal3Core.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
